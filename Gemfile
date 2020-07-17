@@ -14,6 +14,7 @@ group :development, :test do
 
   # Custom
   gem 'factory_bot_rails', '~> 6.1'
+  gem 'faker', '~> 2.13'
   gem 'rspec-rails', '~> 4.0', '>= 4.0.1'
 end
 
