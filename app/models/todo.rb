@@ -1,5 +1,5 @@
 class Todo < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, optional: true
   has_many :items, dependent: :destroy
 
   validates :title, :created_by, presence: true
