@@ -1,24 +1,31 @@
-# README
+# Todos API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- Rails Version: 6.0.3.2
+- Ruby Version: 2.7.1
 
-Things you may want to cover:
+[Rails API](https://guides.rubyonrails.org/api_app.html) with [JWT](https://jwt.io/) for authentication.
 
-* Ruby version
+## Models
+**User:** _name, email, password_digest_  
+**Todo:** _title, created_by_  
+**Item:** _name, done_
 
-* System dependencies
+ ## Endpoints are as follows:
+**Signup:** _/signup_
 
-* Configuration
+**Todo #index:** _/todos_  
+**Todo #show:** _/todos/#{todo_id}_  
+**Todo #create:** _/todos_  
+**Todo #destroy:** _/todos/#{todo_id}_  
 
-* Database creation
+**Item #index:** _/todos/#{todo_id}/items_  
+**Item #show:** _/todos/#{todo_id}/items/#{id}_  
+**Item #create:** _/todos/#{todo_id}/items_  
+**Item #destroy:** _/todos/#{todo_id}/items/#{id}_
 
-* Database initialization
+##### (all queries must include a valid [JWT](https://jwt.io/) token passed in the 'Authorization' header to succeed)
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Todo
+- Add versioning
+- Add serialization ([fast_jsonapi](https://github.com/Netflix/fast_jsonapi) or [active_model_serializers](https://github.com/rails-api/active_model_serializers))
+- Add pagination ([pagy](https://github.com/ddnexus/pagy), [kaminari](https://github.com/kaminari/kaminari) or [will_paginate](https://github.com/mislav/will_paginate/tree/v3.3.0))
