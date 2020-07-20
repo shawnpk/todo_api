@@ -10,7 +10,7 @@
 **Todo:** _title, created_by_  
 **Item:** _name, done_
 
- ## Endpoints are as follows:
+## Endpoints:
 **Signup:** _/signup_
 
 **Todo #index:** _/todos_  
