@@ -27,7 +27,7 @@ class TodosController < ApplicationController
 
   private
     def set_todo
-      @todo = Todo.find(params[:id])
+      @todo = current_user.todos.find(params[:id])
     end
 
     def todo_params
