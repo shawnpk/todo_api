@@ -10,7 +10,7 @@ User.destroy_all
 Todo.destroy_all
 Item.destroy_all
 
-u = User.create(name: Faker::Name.name, email: Faker::Internet.email, password: 'fakepass', password_confirmation: 'fakepass')
+u = User.create(name: 'John Doe', email: 'john.doe@example.com', password: 'password', password_confirmation: 'password')
 
 50.times do
   todo = Todo.create(title: Faker::Lorem.word, created_by: u.id)
