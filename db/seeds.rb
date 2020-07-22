@@ -6,12 +6,17 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+User.destroy_all
 Todo.destroy_all
 Item.destroy_all
+
+u = User.create(name: Faker::Name.name, email: Faker::Internet.email, password: 'fakepass', password_confirmation: 'fakepass')
+
 50.times do
-  todo = Todo.create(title: Faker::Lorem.word, created_by: User.first.id)
+  todo = Todo.create(title: Faker::Lorem.word, created_by: u.id)
   todo.items.create(name: Faker::Lorem.word, done: false)
 end
 
-puts "#{Todo.count} todos created"
-puts "#{Item.count} items created"
+puts "#{User.count} user(s) created"
+puts "#{Todo.count} todos(s) created"
+puts "#{Item.count} items(s) created"
