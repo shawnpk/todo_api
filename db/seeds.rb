@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Todo.destroy_all
+Item.destroy_all
+50.times do
+  todo = Todo.create(title: Faker::Lorem.word, created_by: User.first.id)
+  todo.items.create(name: Faker::Lorem.word, done: false)
+end
+
+puts "#{Todo.count} todos created"
+puts "#{Item.count} items created"
