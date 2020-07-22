@@ -5,6 +5,7 @@ module V1
     def index
       @todos = current_user.todos
       json_response(@todos)
+      # render json: TodoSerializer.new(@todos)
     end
 
     def show
