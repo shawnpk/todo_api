@@ -13,6 +13,8 @@
 ## Endpoints
 **Signup:** _/signup_
 
+**Login:** _/auth/login_
+
 **Todo #index:** _/todos_  
 **Todo #show:** _/todos/#{todo_id}_  
 **Todo #create:** _/todos_  
