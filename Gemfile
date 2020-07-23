@@ -40,5 +40,5 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'active_model_serializers', '~> 0.10.10'
 gem 'bcrypt', '~> 3.1', '>= 3.1.13'
 gem 'jwt', '~> 2.2', '>= 2.2.1'
-# gem 'fast_jsonapi', '~> 1.5'
 gem 'will_paginate', '~> 3.3'
+# gem 'fast_jsonapi', '~> 1.5'
