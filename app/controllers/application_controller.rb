@@ -1,4 +1,6 @@
-class ApplicationController < ActionController::API
+# frozen_string_literal: true
+
+class ApplicationController < ActionController::API # :nodoc:
   include Response
   include ExceptionHandler
 
@@ -6,7 +8,8 @@ class ApplicationController < ActionController::API
   attr_reader :current_user
 
   private
-    def authorize_request
-      @current_user = (AuthorizeApiRequest.new(request.headers).call)[:user]
-    end
+
+  def authorize_request
+    @current_user = AuthorizeApiRequest.new(request.headers).call[:user]
+  end
 end

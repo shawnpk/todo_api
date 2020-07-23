@@ -1,4 +1,6 @@
-class AuthenticationController < ApplicationController
+# frozen_string_literal: true
+
+class AuthenticationController < ApplicationController # :nodoc:
   skip_before_action :authorize_request, only: %i[authenticate]
 
   def authenticate
@@ -7,7 +9,8 @@ class AuthenticationController < ApplicationController
   end
 
   private
-    def auth_params
-      params.permit(:email, :password)
-    end
+
+  def auth_params
+    params.permit(:email, :password)
+  end
 end

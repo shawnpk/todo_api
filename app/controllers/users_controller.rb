@@ -1,4 +1,6 @@
-class UsersController < ApplicationController
+# frozen_string_literal: true
+
+class UsersController < ApplicationController # :nodoc:
   skip_before_action :authorize_request, only: %i[create]
 
   def create
@@ -9,7 +11,8 @@ class UsersController < ApplicationController
   end
 
   private
-    def user_params
-      params.permit(:name, :email, :password, :password_confirmation)
-    end
+
+  def user_params
+    params.permit(:name, :email, :password, :password_confirmation)
+  end
 end

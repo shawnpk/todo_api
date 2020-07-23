@@ -1,5 +1,7 @@
-module V1
-  class ItemsController < ApplicationController
+# frozen_string_literal: true
+
+module V1 # :nodoc:
+  class ItemsController < ApplicationController # :nodoc:
     before_action :set_todo
     before_action :set_item, only: %i[show update destroy]
 
@@ -30,16 +32,17 @@ module V1
     end
 
     private
-      def item_params
-        params.permit(:name, :done)
-      end
 
-      def set_item
-        @item = @todo.items.find_by!(id: params[:id]) if @todo
-      end
+    def item_params
+      params.permit(:name, :done)
+    end
 
-      def set_todo
-        @todo = Todo.find(params[:todo_id])
-      end
+    def set_item
+      @item = @todo.items.find_by!(id: params[:id]) if @todo
+    end
+
+    def set_todo
+      @todo = Todo.find(params[:todo_id])
+    end
   end
 end

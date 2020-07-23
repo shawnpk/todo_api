@@ -1,4 +1,6 @@
-class Todo < ApplicationRecord
+# frozen_string_literal: true
+
+class Todo < ApplicationRecord # :nodoc:
   belongs_to :user, optional: true
   has_many :items, dependent: :destroy
 

@@ -1,7 +1,9 @@
-class ApiVersion
+# frozen_string_literal: true
+
+class ApiVersion # :nodoc:
   attr_reader :version, :default
 
-  def initialize(version, default=false)
+  def initialize(version, default = false)
     @version = version
     @default = default
   end
@@ -11,8 +13,9 @@ class ApiVersion
   end
 
   private
-    def check_headers(headers)
-      accept = headers[:accept]
-      accept&.include?("application/vnd.todos.#{version}+json")
-    end
+
+  def check_headers(headers)
+    accept = headers[:accept]
+    accept&.include?("application/vnd.todos.#{version}+json")
+  end
 end

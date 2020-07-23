@@ -1,4 +1,6 @@
-class User < ApplicationRecord
+# frozen_string_literal: true
+
+class User < ApplicationRecord # :nodoc:
   has_many :todos, foreign_key: :created_by
 
   has_secure_password

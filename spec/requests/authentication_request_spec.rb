@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'Authentication', type: :request do
@@ -6,13 +8,13 @@ RSpec.describe 'Authentication', type: :request do
     let(:headers) { valid_headers.except('Authorization') }
     let(:valid_credentials) do
       {
-        email:    user.email,
+        email: user.email,
         password: user.password
       }.to_json
     end
     let(:invalid_credentials) do
       {
-        email:    Faker::Internet.email,
+        email: Faker::Internet.email,
         password: Faker::Internet.password
       }.to_json
     end

@@ -1,5 +1,7 @@
-class Message
-  def self.not_found(record='record')
+# frozen_string_literal: true
+
+class Message # :nodoc:
+  def self.not_found(record = 'record')
     "Sorry, #{record} not found."
   end
 

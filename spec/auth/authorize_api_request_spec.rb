@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe AuthorizeApiRequest do
@@ -46,7 +48,9 @@ RSpec.describe AuthorizeApiRequest do
         subject(:invalid_request_obj) { described_class.new(header) }
 
         it 'handles JWT::DecodeError' do
-          expect { invalid_request_obj.call }.to raise_error(ExceptionHandler::InvalidToken, /Not enough or too many segments/)
+          expect { invalid_request_obj.call }.to
+          raise_error(ExceptionHandler::InvalidToken,
+                      /Not enough or too many segments/)
         end
       end
     end

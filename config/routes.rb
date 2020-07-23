@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   scope module: :v2, constraints: ApiVersion.new('v2') do
     resources :todos, only: %i[index]

@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe "Items API", type: :request do
+RSpec.describe 'Items API', type: :request do
   let(:user)    { create(:user) }
   let!(:todo)   { create(:todo, created_by: user.id) }
   let!(:items)  { create_list(:item, 10, todo_id: todo.id) }
@@ -96,7 +98,7 @@ RSpec.describe "Items API", type: :request do
 
       it 'updates the item' do
         updated_item = Item.find(id)
-        expect(updated_item.name).to match (/Watch baseball/)
+        expect(updated_item.name).to match(/Watch baseball/)
       end
     end
 

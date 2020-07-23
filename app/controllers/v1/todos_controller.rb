@@ -1,5 +1,7 @@
-module V1
-  class TodosController < ApplicationController
+# frozen_string_literal: true
+
+module V1 # :nodoc:
+  class TodosController < ApplicationController # :nodoc:
     before_action :set_todo, only: %i[show update destroy]
 
     def index
@@ -28,12 +30,13 @@ module V1
     end
 
     private
-      def set_todo
-        @todo = current_user.todos.find(params[:id])
-      end
 
-      def todo_params
-        params.permit(:title)
-      end
+    def set_todo
+      @todo = current_user.todos.find(params[:id])
+    end
+
+    def todo_params
+      params.permit(:title)
+    end
   end
 end
